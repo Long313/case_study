@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: powderblue;
+      }
+      .background {
+        text-align: center;
+        background-color: powderblue;
+      }
+      .button-play {
+        text-align: center;
+      }
+      .audio1 {
+        opacity: 0.1;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #my-canvas {
+        top: 300px;
+      }
+      h1 {
+        margin-top: 50px;
+        color: #ee2c2c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <h1>GAME BALL AND BRICK</h1>
+      <canvas
+        id="my-canvas"
+        width="400"
+        height="300"
+        style="border: 1px solid blueviolet"
+      ></canvas>
+      <br />
+      <div class="button-play">
+        <a href="index.html">PLAY</a>
+      </div>
+      <audio controls loop autoplay class="audio1">
+        <source src="./audio/begin-music.mp3">
+      </audio>
+    </div>
+    <script src="assets\background.js"></script>
+  </body>
+</html>
