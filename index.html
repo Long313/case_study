@@ -6,22 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      #result {
+      .container {
+        display: flex;
+        padding-left:200px;
+        padding-top: 50px;
+      }
+      .control-how-to-play{
+        text-align: center;
         color: red;
+      }
+      .manual {
+        margin-left: 1px;
+        border: 3px solid red;
+        text-align: left;
+        width: 300px;
+        height: 400px;
+        padding-right: 7px;
+      }
+      .game-over {
+        color: red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: blanchedalmond;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 30px 100px;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .game-win {
+        color: red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: blanchedalmond;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 30px 100px;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #result{
+        color: red;
+        padding-left: 5px;
       }
     </style>
   </head>
   <body>
-    <div>
-      <canvas
-        id="myCanvas"
-        width="450"
-        height="300"
-        style="border: 1px solid orangered"
-      ></canvas>
-      <div>Hướng dẫn chơi</div>
+    <audio
+      src="./audio/when-you-see-that-you-were-subject-of-experiment-60.mp3"
+      autoplay
+      loop
+      id="audio-2"
+    ></audio>
+    <div class="container">
+      <div class="canvas">
+        <canvas
+          id="myCanvas"
+          width="500"
+          height="400"
+          style="border: 3px solid blue"
+        ></canvas>
+      </div>
+      <div class="manual">
+        <h3 class="control-how-to-play" aria-hidden="true">&#127918; HƯỚNG DẪN CHƠI</h3>
+        <div id="text-rules">
+            <ul><b><i>Luật chơi</i></b>
+          </p>
+          <li>
+          <i
+            >Mục tiêu của trò chơi là điều khiển thanh chắn, giữ
+            cho quả bóng không rơi xuống và phải phá vỡ hết tất cả những viên
+            gạch ở phía trên để chiến thắng.</i
+          >
+        </li>
+          <li>
+          <i>Nếu để quá bóng chạm đất thì coi như bạn thua cuộc.</i>
+          </li>
+        </ul>
+        </div>
+        <div id="text-control">
+          <ul>
+            <b><i>Các phím điều khiển</i></b>
+          <li class="control-left-arrow">
+            Để di chuyển thanh chắn qua trái, nhấn phím &larr;.</i
+          >
+          </li>
+          <li>
+          <i class="control-right-arrow"
+            >Để di chuyển thanh chắn qua phải, nhấn phím &rarr;.</i
+          >
+          </li>
+          </ul>
+        </div>
+        <div id="result">ĐIỂM CỦA BẠN: 0</div>
+      </div>
     </div>
-    <div id="result">Điểm của bạn: 0</div>
-    <script src="assets\game.js"></script>
+    <div class="game-over">
+      <h3>GAME OVER</h3>
+      <p>Bạn đã phá vỡ được <span id="score">0</span> viên gạch !!!</p>
+      <button id="btn-play-again">Chơi lại</button>
+    </div>
+    <div class="game-win">
+      <h3>YOU WIN</h3>
+      <p>Chúc mừng bạn đã chiến thắng !!!</p>
+    </div>
+    <script src="assets\play.js"></script>
   </body>
 </html>
