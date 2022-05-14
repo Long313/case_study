@@ -1,10 +1,10 @@
 let canvas = document.getElementById("my-canvas");
 let context = canvas.getContext("2d");
-let audio = document.getElementById('audio-1');
-document.addEventListener('keydown',playMusic);
-function playMusic(){
+let audio = document.getElementById("audio-1");
+document.addEventListener("keydown", playMusic);
+function playMusic() {
   audio.play();
-  document.removeEventListener('keydown',playMusic);
+  document.removeEventListener("keydown", playMusic);
 }
 let brick = {
   x: 0,
@@ -22,7 +22,7 @@ let ball = {
 function drawBall(num) {
   context.beginPath();
   context.arc(ball.x, ball.y, ball.radius + num, 0, 2 * Math.PI);
-  context.fillStyle = "green";
+  context.fillStyle = "#BA55D3";
   context.fill();
   context.closePath();
 }
@@ -32,7 +32,7 @@ function zoomBall() {
   drawBall(size);
   size++;
 }
-setInterval(zoomBall,5)
+setInterval(zoomBall, 5);
 function drawBrick(number, row, changeX) {
   for (let i = 0; i < number; i++) {
     if (i == 2 && row == 2) {
